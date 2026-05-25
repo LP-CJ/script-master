@@ -1,0 +1,30 @@
+{
+  "act_structure": {
+    "act1_hook": {
+      "title": "第一幕：期待",
+      "core_inciting_incident": "",
+      "description": ""
+    },
+    "act2_suppression": {
+      "title": "第二幕：压抑",
+      "rising_conflicts": [],
+      "description": ""
+    },
+    "act3_explosion": {
+      "title": "第三幕：爆发",
+      "climax_event": "",
+      "description": ""
+    }
+  },
+  "plot_points": [
+    {
+      "sequence": 1,
+      "act": 1,
+      "title": "",
+      "type": "hook",
+      "emotional_arc": "期待↑",
+      "key_event": "",
+      "visual_hint": ""
+    }
+  ]
+}

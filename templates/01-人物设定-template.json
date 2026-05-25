@@ -1,0 +1,25 @@
+{
+  "protagonist": {
+    "name": "",
+    "age": "",
+    "identity": "",
+    "personality": [],
+    "core_desire": "",
+    "core_fear": "",
+    "speech_style": "CONFIDENT",
+    "appearance_hint": "",
+    "background": ""
+  },
+  "supporting_chars": [
+    {
+      "name": "",
+      "role": "",
+      "relationship_to_protagonist": "",
+      "relationship_type": "ally",
+      "personality": [],
+      "speech_style": "GENTLE",
+      "conflict_with_protagonist": ""
+    }
+  ],
+  "relationship_map": ""
+}

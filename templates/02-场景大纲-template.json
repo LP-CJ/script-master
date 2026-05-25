@@ -1,0 +1,19 @@
+{
+  "world_setting": "",
+  "time_setting": "",
+  "locations": [
+    {
+      "name": "",
+      "type": "内",
+      "mood": "",
+      "ai_visual_hint": "",
+      "fg": "",
+      "mg": "",
+      "bg": "",
+      "lighting": "",
+      "value_structure": ""
+    }
+  ],
+  "special_props": [],
+  "special_effects": []
+}

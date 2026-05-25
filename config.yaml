@@ -1,0 +1,185 @@
+# 剧本大师 v2.0 配置文件
+
+# ============================================================
+# 工作流配置
+# ============================================================
+
+workflow:
+  # 默认交互模式：auto | interactive
+  default_mode: auto
+  
+  # 是否在每个阶段后等待确认
+  auto_wait_for_confirmation: true
+  
+  # 是否自动写 MemPalace
+  auto_save: true
+  
+  # 阶段数（v2.0 增加导演阶段）
+  total_phases: 5
+
+# ============================================================
+# 优化引擎配置
+# ============================================================
+
+optimization:
+  # 默认优化模式：precision | quick
+  default_mode: "precision"
+  
+  # 精修模式步骤数
+  precision_steps: 6
+  
+  # 快速模式步骤数
+  quick_steps: 4
+  
+  # 是否自动执行自检
+  auto_self_check: true
+
+# ============================================================
+# 路径配置
+# ============================================================
+
+paths:
+  mempalace_root: "e:\\知识库\\mempalace-palace\\剧本项目"
+  templates_dir: "C:\\Users\\zhexin\\.workbuddy\\skills\\script-master\\templates"
+  reference_dir: "C:\\Users\\zhexin\\.workbuddy\\skills\\script-master\\reference"
+
+# ============================================================
+# 项目文件命名
+# ============================================================
+
+filenames:
+  project_metadata: "00-项目元数据.json"
+  characters: "01-人物设定.json"
+  scenes: "02-场景大纲.json"
+  plot_points: "03-情节点大纲.json"
+  script_draft: "04-剧本草稿.md"
+  evaluation_report: "05-评估报告.md"
+  final_script: "06-终稿剧本.md"
+  shot_prompts: "07-分镜提示词表.md"
+
+# ============================================================
+# 角色配置
+# ============================================================
+
+roles:
+  planner:
+    name: "策划师"
+    prompt_file: "roles/01-planner.md"
+    phase_id: 1
+    output_files: ["project_metadata", "characters", "scenes", "plot_points"]
+    
+  writer:
+    name: "编剧"
+    prompt_file: "roles/02-writer.md"
+    phase_id: 2
+    output_files: ["script_draft"]
+    optimization:
+      default: "precision"
+      modes: ["precision", "quick"]
+    
+  evaluator:
+    name: "评估师"
+    prompt_file: "roles/03-evaluator.md"
+    phase_id: 3
+    output_files: ["evaluation_report"]
+    self_checks: ["timeline_spatial", "visual_balance"]
+    
+  polisher:
+    name: "润色师"
+    prompt_file: "roles/04-polisher.md"
+    phase_id: 4
+    output_files: ["final_script"]
+    modes: ["standard", "fix"]
+    
+  director:
+    name: "导演"
+    prompt_file: "roles/05-director.md"
+    phase_id: 5
+    output_files: ["shot_prompts"]
+
+# ============================================================
+# 评分配置
+# ============================================================
+
+scoring:
+  dimensions:
+    - name: "核心张力"
+      weight: 0.20
+    - name: "故事类型完成度"
+      weight: 0.15
+    - name: "人物设定"
+      weight: 0.20
+    - name: "人物关系"
+      weight: 0.15
+    - name: "情节桥段"
+      weight: 0.15
+    - name: "市场竞争力"
+      weight: 0.10
+    - name: "开发价值"
+      weight: 0.05
+  grades:
+    excellent: [8.5, 10.0]
+    potential: [8.0, 8.4]
+    average: [7.5, 7.9]
+    below_average: [0.0, 7.4]
+
+# ============================================================
+# 镜头设计配置
+# ============================================================
+
+shot_design:
+  # 景别词典
+  shot_sizes: ["ELS", "VWS", "WS", "MLS", "MS", "MCU", "CU", "ECU", "INSERT"]
+  # 角度词典
+  angles:
+    horizontal: ["Front", "3/4 Front", "1/3 Side", "Side", "3/4 Back", "Back"]
+    vertical: ["Eye Level", "Mild Low", "Moderate Low", "Extreme Low", "Mild High", "Moderate High", "Extreme High"]
+  # 运镜词典
+  movements: ["Static", "Push", "Pull", "Follow", "Pan Left", "Pan Right", "Tilt Up", "Tilt Down", "Micro Push", "Crane Up", "Crane Down", "Handheld", "Steadicam"]
+  # 运镜速度词典
+  speeds: ["Ultra Slow", "Slow", "Medium", "Fast", "Ultra Fast"]
+  # QC检查项
+  qc_checks: ["silhouette", "tangent", "value_structure"]
+
+# ============================================================
+# 人物关系类型（9种）
+# ============================================================
+
+relationship_types:
+  - family
+  - romantic
+  - friendship
+  - work
+  - antagonistic
+  - mentor
+  - rival
+  - ally
+  - stranger
+
+# ============================================================
+# 语风类型（12种）
+# ============================================================
+
+speech_styles:
+  - CASUAL
+  - FORMAL
+  - AGGRESSIVE
+  - GENTLE
+  - HUMOROUS
+  - COLD
+  - ENTHUSIASTIC
+  - SARCASTIC
+  - SHY
+  - CONFIDENT
+  - MYSTERIOUS
+  - CHILDLIKE
+
+# ============================================================
+# AI视频生成配置
+# ============================================================
+
+video_generation:
+  auto_generate_shot_prompts: true
+  default_aspect_ratio: "16:9"
+  output_formats: ["seedance", "kling"]
+  default_model: "seedance"

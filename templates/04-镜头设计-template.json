@@ -1,0 +1,79 @@
+{
+  "shot": {
+    "number": 1,
+    "duration": "10s",
+    "type": "master|reference"
+  },
+  "meta": {
+    "set": "片场名",
+    "scene": "场景名（内/外）",
+    "characters": ["角色1", "角色2"],
+    "props": ["道具1"]
+  },
+  "source": {
+    "original_script": "原始剧本中对应的描述片段",
+    "story_beat": "该镜头的叙事节拍描述",
+    "dialogue": {
+      "character": "角色名",
+      "type": "旁白|对白|独白",
+      "style": "语风标签（如：冷峻、宏大）",
+      "text": "台词文本"
+    }
+  },
+  "theory": {
+    "rationale": "选择该景别/角度/运镜的电影理论依据",
+    "reference_film": "参考的经典电影及具体场景"
+  },
+  "composition": {
+    "shot_size": "ELS|VWS|WS|MLS|MS|MCU|CU|ECU",
+    "fg": "前景元素描述（材质/虚化状态）",
+    "mg": "中景主体描述（人物位置/动作/占比）",
+    "bg": "背景环境描述（色调/景深状态）"
+  },
+  "lighting": {
+    "type": "伦勃朗光|侧光|逆光|柔光|硬光|动机光|高反差|丁达尔光|魔术光...",
+    "description": "光效详细描述",
+    "value_structure": {
+      "style": "Low Key|Mid Key|High Key",
+      "distribution": "主体V4|环境V2-V6|高光V8",
+      "contrast": "低|中|高"
+    }
+  },
+  "qc": {
+    "silhouette_check": {
+      "result": "PASS|FAIL",
+      "detail": "检查结果详情"
+    },
+    "tangent_check": {
+      "result": "PASS|FAIL",
+      "detail": "切割线位置/关节回避/画框间距"
+    }
+  },
+  "camera": {
+    "horizontal_angle": "Front|3/4 Front|1/3 Side|Side|3/4 Back|Back",
+    "vertical_angle": "Eye Level|Mild Low|Moderate Low|Extreme Low|Mild High|Moderate High|Extreme High",
+    "angle_rationale": "选择该角度的叙事/情绪原因",
+    "shot_classification": "完整的景别分类标签（如：远景(WS)）",
+    "classification_note": "分类说明"
+  },
+  "visual": {
+    "composition_text": "完整的构图文字描述（中文，叙事性）",
+    "frame": {
+      "position": "人物在画面中的位置",
+      "pose": "人物姿态/动作",
+      "expression": "表情细节",
+      "environment": "环境氛围描述",
+      "props": "重要道具及状态"
+    }
+  },
+  "movement": {
+    "type": "Static|Push|Pull|Follow|Pan|Tilt|Micro Push|Crane|Handheld|Steadicam...",
+    "speed": "Ultra Slow|Slow|Medium|Fast|Ultra Fast",
+    "rationale": "选择该运镜的叙事/情绪原因",
+    "description": "逐帧视频运镜详细描述（含起幅/过程/落幅）"
+  },
+  "ai_prompt": {
+    "seedance": "Seedance 2.0 优化提示词",
+    "kling": "Kling 提示词"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "project_id": "",
+  "title": "",
+  "genre": "",
+  "style": "",
+  "target_audience": "",
+  "core_conflict": "",
+  "emotional_value": "",
+  "estimated_scenes": 0,
+  "created_at": "",
+  "last_modified": "",
+  "phase_status": {
+    "planner": "pending",
+    "writer": "pending",
+    "evaluator": "pending",
+    "polisher": "pending"
+  },
+  "notes": ""
+}
